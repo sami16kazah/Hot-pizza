@@ -1,12 +1,21 @@
-import { useLoaderData } from "react-router-dom";
+import { useFetcher, useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiServices";
 import moment from "moment";
 import OrderItem from "./OrderItem";
 
 import EmptyCart from "../cart/EmptyCart";
+import { useEffect } from "react";
+import UpdateOrder from "./UpdateOrder";
 
 function Order() {
   const order = useLoaderData();
+  const fetcher = useFetcher();
+  useEffect(
+    function () {
+      if (!fetcher.data && fetcher.state === "idle") fetcher.load("/menu");
+    },
+    [fetcher],
+  );
   const {
     id,
     status,
@@ -22,7 +31,7 @@ function Order() {
   return (
     <div className="space-y-8 px-4 py-6  ">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold">Status</h2>
+        <h2 className="text-xl font-semibold">Order {id} status</h2>
         <div className="space-x-2 ">
           {priority && (
             <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-red-50">
@@ -47,7 +56,15 @@ function Order() {
 
       <ul className="dive-stone-200 divide-y border-b border-t">
         {cart.map((item) => (
-          <OrderItem item={item} key={item.pizzaId}></OrderItem>
+          <OrderItem
+            item={item}
+            key={item.pizzaId}
+            isLoadingIngredients={fetcher.state === "loading"}
+            ingredients={
+              fetcher?.data?.find((el) => el.id === item.pizzaId)
+                ?.ingredients ?? []
+            }
+          ></OrderItem>
         ))}
       </ul>
 
@@ -66,6 +83,7 @@ function Order() {
           {priority ? orderPrice + priorityPrice : orderPrice}
         </p>
       </div>
+      {!priority && <UpdateOrder></UpdateOrder>}
     </div>
   );
 }

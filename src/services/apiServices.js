@@ -15,6 +15,23 @@ export async function getOrder(id) {
   return data;
 }
 
+export async function updateOrder(id, updatedOrder) {
+  try {
+    const res = await fetch(`${API_URL2}/orders/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(updatedOrder),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) throw Error("res is not ok");
+    const data = await res.json();
+    return data;
+  } catch {
+    throw Error("Failed Creating Your Order !");
+  }
+}
+
 export async function createOrder(newOrder) {
   try {
     const res = await fetch(`${API_URL2}/orders`, {
@@ -26,7 +43,6 @@ export async function createOrder(newOrder) {
     });
     if (!res.ok) throw Error("res is not ok");
     const data = await res.json();
-    console.log(data);
     return data;
   } catch {
     throw Error("Failed Creating Your Order !");

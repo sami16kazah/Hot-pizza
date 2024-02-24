@@ -20,6 +20,76 @@
       "estimatedDelivery": 1708694544823,
       "orderPrice": 30,
       "priorityPrice": 25
+    },
+    {
+      "id": "edb5",
+      "customer": "sami",
+      "phone": "+963 937590305",
+      "address": "syria",
+      "priority": true,
+      "cart": [
+        {
+          "pizzaId": 1,
+          "name": "Spannish And Mashroum",
+          "quantity": 2,
+          "unitPrice": 15,
+          "totalPrice": 30
+        },
+        {
+          "pizzaId": 11,
+          "name": "Spinach and Mushroom",
+          "unitPrice": 15,
+          "quantity": 3,
+          "totalPrice": 45
+        },
+        {
+          "pizzaId": 12,
+          "name": "Mediterranean",
+          "unitPrice": 16,
+          "quantity": 3,
+          "totalPrice": 48
+        }
+      ],
+      "position": "",
+      "status": false,
+      "estimatedDelivery": 1708779812021,
+      "orderPrice": 123,
+      "priorityPrice": 25
+    },
+    {
+      "id": "3a40",
+      "customer": "samikazah",
+      "phone": "+963 937590305",
+      "address": "syria",
+      "cart": [
+        {
+          "pizzaId": 3,
+          "name": "Romana",
+          "unitPrice": 15,
+          "quantity": 1,
+          "totalPrice": 15
+        },
+        {
+          "pizzaId": 4,
+          "name": "Prosciutto e Rucola",
+          "unitPrice": 16,
+          "quantity": 1,
+          "totalPrice": 16
+        },
+        {
+          "pizzaId": 5,
+          "name": "Diavola",
+          "unitPrice": 16,
+          "quantity": 1,
+          "totalPrice": 16
+        }
+      ],
+      "position": "",
+      "status": false,
+      "estimatedDelivery": 1708780106827,
+      "priority": true,
+      "orderPrice": 47,
+      "priorityPrice": 25
     }
   ]
 }
