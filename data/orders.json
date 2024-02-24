@@ -1,0 +1,25 @@
+{
+  "orders": [
+    {
+      "id": "3eec",
+      "customer": "sami",
+      "phone": "+963 937590305",
+      "address": "Amsterdam-Zuidoost, Amsterdam , undefined , Netherlands (Kingdom of the)",
+      "priority": true,
+      "cart": [
+        {
+          "pizzaId": 1,
+          "name": "Spannish And Mashroum",
+          "quantity": 2,
+          "unitPrice": 15,
+          "totalPrice": 30
+        }
+      ],
+      "position": "",
+      "status": false,
+      "estimatedDelivery": 1708694544823,
+      "orderPrice": 30,
+      "priorityPrice": 25
+    }
+  ]
+}

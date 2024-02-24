@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 w-full md:px-6 md:py-3;
+  }
+  /*https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje*/
+  .loader {
+    width: 45px;
+    aspect-ratio: 1;
+    --c: no-repeat linear-gradient(theme(colors.slate.800) 0 0);
+    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+    background-size: 20% 100%;
+    animation: b1 1s infinite linear;
+  }
+  @keyframes b1 {
+    0% {
+      background-size: 20% 100%, 20% 100%, 20% 100%;
+    }
+    33% {
+      background-size: 20% 10%, 20% 100%, 20% 100%;
+    }
+    50% {
+      background-size: 20% 100%, 20% 10%, 20% 100%;
+    }
+    66% {
+      background-size: 20% 100%, 20% 100%, 20% 10%;
+    }
+    100% {
+      background-size: 20% 100%, 20% 100%, 20% 100%;
+    }
+  }
+
+  .epr-body::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  .epr-body::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  .epr-body::-webkit-scrollbar-thumb {
+    background: rgb(250 204 21 / var(--tw-bg-opacity)) !important;
+  }
+  ::-webkit-scrollbar {
+    width: 6px !important;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(250 204 21 / var(--tw-bg-opacity)) !important;
+  }
+  /* custom scrollbar*/
+  .scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(250 204 21 / var(--tw-bg-opacity));
+  }
+}
